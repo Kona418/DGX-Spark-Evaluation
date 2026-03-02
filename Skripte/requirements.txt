@@ -1,0 +1,9 @@
+streamlit
+pandas
+opencv-python-headless
+pytesseract
+Pillow
+jiwer
+scikit-image
+transformers
+# PyTorch separat installieren (nicht hier!)
