@@ -1,4 +1,3 @@
-```markdown
 # DGX Spark Model Evaluation
 
 Dieses Repository enthält alle Skripte, generierten Medien, ComfyUI-Workflows und Ergebnisse einer Seminararbeit zur Evaluierung generativer KI-Modelle auf einem Nvidia DGX Spark System (GB10 SoC, 128 GB Unified Memory). Verglichen werden Bildgenerierungsmodelle (Flux.2 Dev vs. SDXL) und Videogenerierungsmodelle (LTX-2 vs. SVD).
@@ -95,6 +94,4 @@ Python-Umgebung einrichten und Streamlit-App starten:
 cd Skripte
 pip install -r requirements.txt
 streamlit run main.py
-```
-
 ```
