@@ -123,7 +123,7 @@ def calc_clap_audio(audio_path, prompt):
     if not audio_path or not prompt: return None
     try:
         audio_sample, sr = librosa.load(audio_path, sr=48000)
-        inputs = clap_processor(audios=audio_sample, text=prompt, return_tensors="pt", padding=True, sampling_rate=48000).to(device)
+        inputs = clap_processor(audio=audio_sample, text=prompt, return_tensors="pt", padding=True, sampling_rate=48000).to(device)
         with torch.no_grad():
             outputs = clap_model(**inputs)
         return outputs.logits_per_audio[0][0].item()
