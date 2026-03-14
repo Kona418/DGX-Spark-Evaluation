@@ -134,7 +134,10 @@ def calc_clap_audio(audio_path, prompt):
 def calc_ocr_cer(image_path, ref_text):
     if not ref_text: return None
     try:
-        ext_text = pytesseract.image_to_string(Image.open(image_path)).strip()
+        img = cv2.imread(image_path)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        inverted = cv2.bitwise_not(gray)
+        ext_text = pytesseract.image_to_string(inverted).strip()
         return cer(ref_text.lower(), ext_text.lower()) if ext_text else 1.0
     except Exception as e:
         print(f"Fehler bei OCR: {e}")
