@@ -1,0 +1,6 @@
+Dateiname,Medium,CLIP_Score,CLAP_Score,SSIM,CER,Logik_Rating,Artefakte_Rating,Prompt_Treue_Rating,Aesthetik_Rating,AV_Sync_Rating,Audioqualitaet_Rating
+Flux2_DHBW_01.png,Bild,25.42916488647461,,,1.0,5,5,5,5,,
+Flux2_DHBW_02.png,Bild,27.113563537597656,,,12.25,5,5,5,5,,
+Flux2_DHBW_03.png,Bild,25.722211837768555,,,1.0,4,5,5,5,,
+Flux2_DHBW_04.png,Bild,26.465320587158203,,,1.0,4,4,5,5,,
+Flux2_DHBW_05.png,Bild,27.71807289123535,,,1.0,5,5,5,5,,
