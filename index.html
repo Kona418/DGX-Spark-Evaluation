@@ -1,9 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <title>DGX-Seminar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGX Spark Evaluation - DHBW Ravensburg</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <h1>Willkommen zum DGX-Seminar</h1>
+    <header class="dhbw-header">
+        <div class="header-content">
+            <img src="https://upload.wikimedia.org/wikipedia/de/thumb/1/1d/DHBW-Logo.svg/960px-DHBW-Logo.svg.png?_=20110626153129" 
+                 alt="DHBW Ravensburg" class="dhbw-logo" height="60">
+            <div class="header-text">
+                <h1>DGX Spark Evaluation</h1>
+                <p>KI-generierte Medien (LTX2, SVD, SDXL, Flux2)</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="filter-section">
+            <div class="filter-group">
+                <button class="dhbw-btn filter-btn active" data-filter="all">Alle</button>
+                <button class="dhbw-btn filter-btn" data-filter="type-image">Bilder</button>
+                <button class="dhbw-btn filter-btn" data-filter="type-video">Videos</button>
+            </div>
+            
+            <div class="filter-group select-group">
+                <select id="model-filter" class="dhbw-select">
+                    <option value="all">Alle Modelle</option>
+                    <option value="LTX2">LTX2</option>
+                    <option value="SVD">SVD</option>
+                    <option value="SDXL">SDXL</option>
+                    <option value="Flux2">Flux2</option>
+                </select>
+
+                <select id="duration-filter" class="dhbw-select">
+                    <option value="all">Alle Längen (nur Video)</option>
+                    <option value="1">1 Sekunde</option>
+                    <option value="10">10 Sekunden</option>
+                    <option value="15">15 Sekunden (+ Audio)</option>
+                </select>
+                
+                <select id="prompt-filter" class="dhbw-select">
+                    <option value="all">Alle Kategorien</option>
+                    <!-- Options populated by JS dynamically -->
+                </select>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div id="gallery-grid" class="gallery-grid">
+                <!-- Javascript injects cards here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="dhbw-footer">
+        <div class="footer-content">
+            <p>Erstellt im Rahmen einer Seminar Arbeit an der DHBW Ravensburg</p>
+            <p style="margin-top: 5px; font-weight: 600; color: var(--dhbw-primary);">Jannes Kurzke</p>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Modal for detailed view -->
+    <div id="media-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-media-container" id="modal-media-container">
+                    <!-- Media element injected here -->
+                </div>
+                <div class="modal-info-container">
+                    <h2 id="modal-title">Model Name</h2>
+                    <div class="modal-badges" id="modal-badges" style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 1rem;"></div>
+                    <div class="modal-prompt">
+                        <h3>Verwendeter Prompt:</h3>
+                        <p id="modal-prompt-text">Prompt text goes here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data and App scripts -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
