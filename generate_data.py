@@ -160,15 +160,14 @@ for pattern in patterns:
         prompt_text, cat_name = determine_details(model, c_idx_int, source, is_audio, seed == 99)
         
         # Determine thumbnail path
-        thumb_path = file_path
-        if mtype == 'video' and 'thumbnails' not in file_path:
-            dirname = os.path.dirname(file_path)
-            basename = os.path.basename(file_path).replace('.mp4', '.png')
-            potential_thumb = os.path.join(dirname, 'thumbnails', basename)
-            if os.path.exists(potential_thumb):
-                thumb_path = potential_thumb
-            else:
-                thumb_path = None
+        file_dir = os.path.dirname(file_path)
+        preview_dir = os.path.join(os.path.dirname(file_dir), 'preview')
+        name, _ = os.path.splitext(os.path.basename(file_path))
+        potential_thumb = os.path.join(preview_dir, name + '.jpg')
+        if os.path.exists(potential_thumb):
+            thumb_path = potential_thumb
+        else:
+            thumb_path = file_path
         
         data.append({
             'file': file_path,

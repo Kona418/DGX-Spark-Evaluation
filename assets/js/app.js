@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 mediaHTML += `<div class="play-overlay">▶</div>`;
             } else {
-                mediaHTML = `<img src="${item.file}" loading="lazy" alt="${item.model} Image"/>`;
+                mediaHTML = `<img src="${item.thumb}" loading="lazy" alt="${item.model} Image"/>`;
             }
 
             let badgesHTML = `<span class="model-badge">${item.model}</span>`;
