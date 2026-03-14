@@ -115,14 +115,14 @@ def determine_details(model, category_idx, source, is_audio=False, is_priming=Fa
 
 # Collect files
 patterns = [
+    'media/Images/SDXL/output/*.png'
     'media/Images/DHBW_FLux2/output/*.png',
     'media/Images/Flux2/output/*.png',
-    'media/Images/SVD/output/*.mp4',
+    'media/Videos/SVD/output/*.mp4',
     'media/Videos/DHBW_LTX2/output/*.mp4',
     'media/Videos/LTX_10sek/output/*.mp4',
     'media/Videos/LTX_15sek/output/*.mp4',
     'media/Videos/LTX_1sek/output/*.mp4',
-    'media/Videos/SDXL/output/*.png'
 ]
 
 for pattern in patterns:
